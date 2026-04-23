@@ -1,0 +1,181 @@
+.editorWrapper {
+  position: relative;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.editorWrapper:focus-within {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.2), var(--glow-cyan);
+}
+
+.readOnly {
+  opacity: 0.85;
+}
+
+.readOnly:focus-within {
+  border-color: rgba(0, 255, 136, 0.5);
+  box-shadow: 0 0 0 1px rgba(0, 255, 136, 0.15);
+}
+
+.editorHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.editorDots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dotRed { background: #ff5f57; }
+.dotYellow { background: #febc2e; }
+.dotGreen { background: #28c840; }
+
+.editorMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.langIcon {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent-cyan);
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.langSelect {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  outline: none;
+}
+
+.langSelect:hover,
+.langSelect:focus {
+  border-color: var(--accent-cyan);
+  color: var(--text-primary);
+}
+
+.langSelect option {
+  background: var(--bg-card);
+}
+
+.langLabel {
+  font-size: 11px;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+}
+
+.readOnlyBadge {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--accent-green);
+  background: rgba(0, 255, 136, 0.08);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  padding: 2px 8px;
+  border-radius: 100px;
+}
+
+.lineNumbers {
+  width: 48px;
+  flex-shrink: 0;
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 12px;
+  border-right: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.lineNum {
+  font-size: 12px;
+  line-height: 21px;
+  color: var(--text-dim);
+  min-width: 20px;
+  text-align: right;
+  user-select: none;
+  transition: color 0.2s;
+}
+
+.lineNumHighlight {
+  color: var(--accent-red);
+  font-weight: 700;
+}
+
+.textarea {
+  flex: 1;
+  min-height: 320px;
+  padding: 16px 16px;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 13px;
+  line-height: 21px;
+  resize: vertical;
+  outline: none;
+  tab-size: 2;
+  white-space: pre;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.textarea::placeholder {
+  color: var(--text-dim);
+}
+
+.editorFooter {
+  padding: 8px 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.charBar {
+  flex: 1;
+  height: 2px;
+  background: var(--border);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.charFill {
+  height: 100%;
+  border-radius: 1px;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.charCount {
+  color: var(--text-dim);
+}
